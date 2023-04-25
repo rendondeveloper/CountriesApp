@@ -1,0 +1,1 @@
+package com.rendonsoft.testtotalplay.features.home.framework.data.config.responsedata class Demonyms(    val eng: Eng,    val fra: Fra)

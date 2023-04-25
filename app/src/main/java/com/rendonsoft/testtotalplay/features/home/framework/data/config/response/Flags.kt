@@ -1,0 +1,1 @@
+package com.rendonsoft.testtotalplay.features.home.framework.data.config.responsedata class Flags(    val alt: String,    val png: String,    val svg: String)

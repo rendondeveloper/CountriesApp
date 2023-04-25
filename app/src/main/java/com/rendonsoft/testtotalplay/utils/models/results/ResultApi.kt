@@ -1,0 +1,1 @@
+package com.rendonsoft.testtotalplay.utils.models.resultsimport java.lang.Exceptionsealed class ResultApi<out T> {    data class Success<out T>(val data: T) : ResultApi<T>()    data class Error(val exception: Exception) : ResultApi<Nothing>()}

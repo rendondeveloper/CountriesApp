@@ -1,0 +1,1 @@
+package com.rendonsoft.testtotalplay.utils.models.mapperinterface Mapper<I, O> {    fun map(input : I) : O}

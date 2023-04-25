@@ -1,0 +1,1 @@
+package com.rendonsoft.testtotalplay.features.home.framework.data.config.responsedata class Translations(    val ara: Ara,    val bre: Bre,    val cym: Cym,    val per: Per)

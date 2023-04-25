@@ -1,0 +1,1 @@
+package com.rendonsoft.testtotalplay.features.home.framework.data.config.responsedata class Maps(    val googleMaps: String,    val openStreetMaps: String)

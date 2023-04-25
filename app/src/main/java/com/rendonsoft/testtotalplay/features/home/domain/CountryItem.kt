@@ -1,0 +1,1 @@
+package com.rendonsoft.testtotalplay.features.home.domaindata class CountryItem(val flag: String, val nameCountry: String, val nameCapital: String, val label: String)

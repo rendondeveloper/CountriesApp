@@ -1,0 +1,1 @@
+package com.rendonsoft.testtotalplay.features.home.usescasesimport com.rendonsoft.testtotalplay.features.home.data.CountryRepositoryclass GetCountryAllUsesCase(private val repository: CountryRepository) {    suspend fun invoke() = repository.getContriesAll()}
