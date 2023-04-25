@@ -1,13 +1,18 @@
 package com.rendonsoft.testtotalplay.features.home.framework.presentation.view.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.rendonsoft.testtotalplay.R
 import com.rendonsoft.testtotalplay.databinding.FragmentHomeBinding
+import com.rendonsoft.testtotalplay.features.home.framework.presentation.view.detail.DetailActivity
 import com.rendonsoft.testtotalplay.features.home.framework.presentation.view.home.adapter.CountryAdapter
 import com.rendonsoft.testtotalplay.features.home.framework.presentation.view.home.adapter.ShimmerAdapter
 import com.rendonsoft.testtotalplay.features.home.framework.presentation.view.home.uiModels.StateView
@@ -22,7 +27,7 @@ class HomeFragment : Fragment() {
     private val viewModel by activityViewModel<CountryViewModel>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -60,16 +65,24 @@ class HomeFragment : Fragment() {
                 val shimmerAdapter = ShimmerAdapter()
                 binding.rvCountries.adapter = shimmerAdapter
             }
+
             is StateView.Empty -> {
                 binding.viewEmpty.visibility = View.VISIBLE
                 binding.tvEmpty.text = state.message
             }
+
             is StateView.Error -> {
                 binding.viewError.visibility = View.VISIBLE
                 binding.tvError.text = state.message
             }
+
             is StateView.Data -> {
-                val adapterData = CountryAdapter(state.list)
+                val adapterData = CountryAdapter(state.list) {
+                    val intent = Intent(context, DetailActivity::class.java)
+                    intent.putExtra("nameCountry", it.nameCountry)
+                    intent.putExtra("flag", it.flag)
+                    startActivity(intent)
+                }
                 binding.rvCountries.adapter = adapterData
             }
         }

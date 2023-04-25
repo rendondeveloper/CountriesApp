@@ -4,7 +4,7 @@
     package="com.rendonsoft.testtotalplay">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".utils.di.App"
@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestTotalPlay"
         tools:targetApi="31">
+        <activity
+            android:name=".features.home.framework.presentation.view.detail.DetailActivity"
+            android:exported="false" />
         <activity
             android:name=".features.home.framework.presentation.main.MainActivity"
             android:exported="true">
