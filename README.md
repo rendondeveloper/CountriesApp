@@ -3,7 +3,7 @@
 Hola soy Luis Enrique Rendon Cortez, este es un pequeño proyecto donde utilizo una convinaci{on de clean architecture + MVVM + inyeccción de dependecnias,
 de un pequeño consumo de un api publica de que nos da todas las banderas disponibles en una sola consulta.
 
-## Used Plugings
+## Dependencies
 
 Koin -> Inyector de dependencias
 Picasso -> Para consumo de imagenes 
